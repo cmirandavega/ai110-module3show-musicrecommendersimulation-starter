@@ -95,6 +95,75 @@ You can add more tests in `tests/test_recommender.py`.
 
 ---
 
+## Example Output
+
+Here's what the recommender produces for the default user profile (pop genre, happy mood, 0.8 target energy):
+
+![Terminal Output](screenshots/terminal_Output.png)
+
+The output shows:
+- **Top 5 recommendations** sorted by score (highest first)
+- **Score breakdown** with visual progress bar (0.0 → 5.0)
+- **Detailed reasons** for each component (genre, mood, energy, acousticness, valence)
+- **Clear indicators** (✓ match, ✗ mismatch) for categorical features
+
+Key insight: *Sunrise City* is the #1 recommendation because it matches both genre and mood perfectly, with nearly identical energy to the target. Scores drop significantly when categorical matches are lost.
+
+---
+
+## Multi-Profile Testing Results
+
+The recommender generates different recommendations based on each user's unique profile. Here are the results for all four user profiles:
+
+### Profile 1: High-Energy Pop
+
+![High-Energy Pop Recommendations](screenshots/highEnergyPop.png)
+
+**Profile:** Pop genre, happy mood, 0.8 target energy, prefers non-acoustic
+
+This profile favors upbeat, energetic pop tracks with high valence. Sunrise City dominates as the #1 choice due to perfect genre/mood match and near-identical energy.
+
+---
+
+### Profile 2: Chill Lofi
+
+![Chill Lofi Recommendations](screenshots/chillLofi.png)
+
+**Profile:** Lofi genre, chill mood, 0.35 target energy, prefers acoustic
+
+This profile seeks relaxing, low-energy tracks with acoustic qualities. The Gaussian energy similarity rewards songs close to the 0.35 target.
+
+---
+
+### Profile 3: Deep Intense Rock
+
+![Deep Intense Rock Recommendations](screenshots/deepIntenseRock.png)
+
+**Profile:** Rock genre, intense mood, 0.91 target energy, prefers non-acoustic
+
+This profile demands high-energy, intense tracks. The scoring system heavily weights exact genre/mood matches for this power-user profile.
+
+---
+
+### Profile 4: Latin Playful
+
+![Latin Playful Recommendations](screenshots/latinPlayful.png)
+
+**Profile:** Latin genre, playful mood, 0.71 target energy, prefers non-acoustic
+
+This profile targets energetic, uplifting Latin music. The system discovers niche recommendations based on the specific genre/mood combination.
+
+---
+
+## Key Insights from Multi-Profile Testing
+
+- **Genre/Mood Dominance:** Categorical matches heavily influence ranking (±2.0 and ±1.0 points respectively)
+- **Energy as Differentiator:** The Gaussian similarity metric provides smooth, intuitive energy matching
+- **Profile Diversity:** Each user profile receives completely different top-5 results, showing the system correctly segments preferences
+- **Acousticness Preference:** Profiles with `likes_acoustic=True` show clear preference for high-acousticness songs
+
+---
+
 ## Experiments You Tried
 
 Use this section to document the experiments you ran. For example:
