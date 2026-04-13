@@ -9,3 +9,11 @@ id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
 8,Night Drive Loop,Neon Echo,synthwave,moody,0.75,110,0.49,0.73,0.22
 9,Focus Flow,LoRoom,lofi,focused,0.40,80,0.59,0.60,0.78
 10,Rooftop Lights,Indigo Parade,indie pop,happy,0.76,124,0.81,0.82,0.35
+11,Block Party Summer,Street Canvas,hip-hop,energetic,0.83,97,0.76,0.88,0.11
+12,Hollow Road,Cedar & Ash,folk,melancholic,0.31,70,0.28,0.34,0.91
+13,Pulse Grid,Synthara,electronic,energetic,0.89,128,0.66,0.91,0.04
+14,Velvet Evening,Marisol Keys,soul,romantic,0.52,86,0.78,0.58,0.74
+15,Iron Cathedral,Gravemass,metal,intense,0.96,168,0.22,0.51,0.06
+16,Calor de Noche,Trio Dorado,latin,playful,0.71,104,0.83,0.87,0.43
+17,Porch Light Blues,Dusty Heller,blues,nostalgic,0.44,79,0.45,0.39,0.88
+18,Still Water Sonata,Elara Voss,classical,introspective,0.19,64,0.61,0.22,0.97
